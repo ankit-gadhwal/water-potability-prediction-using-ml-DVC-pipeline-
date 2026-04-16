@@ -20,7 +20,7 @@ def load_data(filepath : str) -> pd.DataFrame:
 
 def prepare_data(data:pd.DataFrame) -> tuple[pd.DataFrame,pd.Series]:
     try:
-        X = data.drop(columns = ['potability'],axis=1) 
+        X = data.drop(columns = ['potability']) 
         y = data['potability']
         return X,y
     except Exception as e:
