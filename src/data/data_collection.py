@@ -40,9 +40,9 @@ def main():
         load_params(params_filepath)
         test_size = load_params(params_filepath)
         train_data,test_data = split_data(data,test_size)
-        os.makedirs(raw_data_path)
+        os.makedirs(raw_data_path, exist_ok=True)
         save_data(train_data,os.path.join(raw_data_path,"train_csv"))
-        save_data(train_data,os.path.join(raw_data_path,"test_csv"))
+        save_data(test_data,os.path.join(raw_data_path,"test_csv"))
     except Exception as e:
         raise Exception(f"An error occured : {e}")
 
